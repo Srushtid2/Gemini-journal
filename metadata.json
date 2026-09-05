@@ -1,0 +1,6 @@
+{
+  "name": "Gemini Journal",
+  "description": "A private personal memory journal preserving authentic moments in a chronological timeline.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

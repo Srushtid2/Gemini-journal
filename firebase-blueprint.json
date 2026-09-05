@@ -1,0 +1,62 @@
+{
+  "entities": {
+    "Memory": {
+      "title": "Memory",
+      "description": "A personal journal memory entry.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the memory"
+        },
+        "userId": {
+          "type": "string",
+          "description": "The UID of the owner"
+        },
+        "date": {
+          "type": "string",
+          "description": "ISO date string of the memory (YYYY-MM-DD)"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the memory"
+        },
+        "originalText": {
+          "type": "string",
+          "description": "Original unedited memory text"
+        },
+        "reflection": {
+          "type": "string",
+          "description": "AI reflection generated on demand, visually separated from originalText"
+        },
+        "reflectionGeneratedAt": {
+          "type": "number",
+          "description": "Timestamp when AI reflection was generated"
+        },
+        "photos": {
+          "type": "array",
+          "description": "Photo placeholder links"
+        },
+        "videos": {
+          "type": "array",
+          "description": "Video placeholder links"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp when memory was created"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Timestamp when memory was last updated"
+        }
+      },
+      "required": ["id", "userId", "date", "title", "originalText"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/memories/{memoryId}": {
+      "schema": "Memory",
+      "description": "User's private journal memories isolated by authenticated user ID"
+    }
+  }
+}
